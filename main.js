@@ -40,9 +40,10 @@ window.addEventListener("DOMContentLoaded", (e) => {
 
             function filterTasksByTag(tag) {
                 Array.from(document.getElementsByTagName("details")).forEach(details_element => {
-                    console.log(new Set(JSON.parse(details_element.getAttribute("data"))))
+                    // console.log(new Set(JSON.parse(details_element.getAttribute("data"))))
                     const details_element_tags = new Set(JSON.parse(details_element.getAttribute("data")))
-                    details_element_tags.has(tag) ? details_element.classList.remove("hide") : details_element.classList.add("hide")
+                    tag == "Всё" ? details_element.classList.remove("hide") : 
+                        details_element_tags.has(tag) ? details_element.classList.remove("hide") : details_element.classList.add("hide")
                 })
             }
         })
