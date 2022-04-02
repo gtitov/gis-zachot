@@ -22,5 +22,28 @@ window.addEventListener("DOMContentLoaded", (e) => {
                 document.getElementById("tags").innerHTML += `<a href="#" class="tag">${tag_value}</a>`
             }
 
+
+            // Filter by tag
+            Array.from(document.getElementsByClassName("tag")).forEach(tag_element => {
+                tag_element.addEventListener("click", clickOnTag)
+            })
+
+            function clickOnTag() {
+                Array.from(document.getElementsByClassName("tag")).forEach(tag_element => {
+                    tag_element.classList.remove("current")
+                })
+                this.classList.add("current")
+                filterTasksByTag(this.innerText)
+            }
+
+
+
+            function filterTasksByTag(tag) {
+                Array.from(document.getElementsByTagName("details")).forEach(details_element => {
+                    console.log(new Set(JSON.parse(details_element.getAttribute("data"))))
+                    const details_element_tags = new Set(JSON.parse(details_element.getAttribute("data")))
+                    details_element_tags.has(tag) ? details_element.classList.remove("hide") : details_element.classList.add("hide")
+                })
+            }
         })
 })
