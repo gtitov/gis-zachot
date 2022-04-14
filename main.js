@@ -4,7 +4,8 @@ window.addEventListener("DOMContentLoaded", (e) => {
         .then(json => {
 
             // Add tasks
-            const tasks = json.tasks
+            const all_tasks = json.tasks
+            const tasks = all_tasks.filter(task => !(task.hide))
 
             tasks.forEach((task, i) => renderTask(task, i))
 
