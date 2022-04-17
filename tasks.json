@@ -87,7 +87,7 @@
         },
         {
             "task": "&#128722; Рассчитать среднее значение показателя в пределах бассейнов и визуализировать в виде карты",
-            "data": "#",
+            "data": "https://github.com/gtitov/gis-zachot/blob/master/files/Tat01.gpkg, https://github.com/gtitov/gis-zachot/blob/master/files/Tat01.png",
             "result": "Карта",
             "tags": ["оверлей"],
             "author": "КАМ",
